@@ -74,8 +74,7 @@ class SupplierController extends Controller
     {
         $existingSupplier = Supplier::find($id);
         if ($existingSupplier) {
-            $existingSupplier->supply_id = $request->supplier['supply_id'];
-            $existingSupplier->product_id = $request->supplier['product_id'];
+            $existingSupplier->name = $request->supplier['name'];
             $existingSupplier->save();
             return $existingSupplier;
         }
@@ -90,7 +89,7 @@ class SupplierController extends Controller
      */
     public function destroy($id)
     {
-        $existingSupplier = Supplier_product::find($id);
+        $existingSupplier = Supplier::find($id);
         if ($existingSupplier) {
             $existingSupplier->delete();
             return "Supplier successfully deleted";

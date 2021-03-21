@@ -78,7 +78,7 @@ class Supplier_productController extends Controller
             $existingSupplier_product->supply_id = $request->supplier_product['supply_id'];
             $existingSupplier_product->product_id = $request->supplier_product['product_id'];
             $existingSupplier_product->save();
-            return $existingProduct;
+            return $existingSupplier_product;
         }
         return "Supplier product not found";
     }

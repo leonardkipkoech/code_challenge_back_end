@@ -76,13 +76,13 @@ class ProductController extends Controller
     {
         $existingProduct = Product::find($id);
         if ($existingProduct) {
-            $existingProduct->order_id = $request->product['name'];
+            $existingProduct->name = $request->product['name'];
             $existingProduct->description = $request->product['description'];
             $existingProduct->quantity = $request->product['quantity'];
             $existingProduct->save();
             return $existingProduct;
         }
-        return "Order not found";
+        return "Product not found";
     }
 
     /**

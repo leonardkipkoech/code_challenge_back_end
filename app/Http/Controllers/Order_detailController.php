@@ -75,8 +75,8 @@ class Order_detailController extends Controller
     {
         $existingOrder_detail = Order_detail::find($id);
         if ($existingOrder_detail) {
-            $existingOrder_detail->order_id = $request->order_detail['order_id'] ? true : false;
-            $existingOrder_detail->product_id = $request->order_detail['product_id'] ? Carbon::now() : null;
+            $existingOrder_detail->order_id = $request->order_detail['order_id'];
+            $existingOrder_detail->product_id = $request->order_detail['product_id'];
             $existingOrder_detail->save();
             return $existingOrder_detail;
         }

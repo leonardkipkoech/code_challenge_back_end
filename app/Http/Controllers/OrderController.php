@@ -74,7 +74,7 @@ class OrderController extends Controller
     {
         $existingOrder = Order::find($id);
         if ($existingOrder) {
-            $existingOrder->order_id = $request->order['order_number'];
+            $existingOrder->order_number = $request->order['order_number'];
             $existingOrder->save();
             return $existingOrder;
         }
